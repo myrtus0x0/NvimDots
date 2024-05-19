@@ -32,3 +32,6 @@ require("lspconfig").pylsp.setup {
     },
   },
 }
+
+local opt = vim.opt
+opt.conceallevel = 2
