@@ -33,5 +33,53 @@ require("lspconfig").pylsp.setup {
   },
 }
 
-local opt = vim.opt
-opt.conceallevel = 2
+if vim.g.neovide then
+  vim.keymap.set("n", "<D-s>", ":w<CR>") -- Save
+  vim.keymap.set("v", "<D-c>", '"+y') -- Copy
+  vim.keymap.set("n", "<D-v>", '"+P') -- Paste normal mode
+  vim.keymap.set("v", "<D-v>", '"+P') -- Paste visual mode
+  vim.keymap.set("c", "<D-v>", "<C-R>+") -- Paste command mode
+  vim.keymap.set("i", "<D-v>", '<ESC>l"+Pli') -- Paste insert mode
+  vim.keymap.set("n", "<ScrollWheelRight>", "<Nop>", { noremap = true, silent = true })
+  vim.keymap.set("n", "<ScrollWheelLeft>", "<Nop>", { noremap = true, silent = true })
+  vim.keymap.set("n", "<S-ScrollWheelUp>", "<ScrollWheelRight>", { noremap = true, silent = true })
+  vim.keymap.set("n", "<S-ScrollWheelDown>", "<ScrollWheelLeft>", { noremap = true, silent = true })
+  vim.o.guifont = "Iosevka Nerd Font Mono:h16"
+end
+
+-- Allow clipboard copy paste in neovim
+vim.api.nvim_set_keymap("", "<D-v>", "+p<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("!", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("t", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<D-v>", "<C-R>+", { noremap = true, silent = true })
+
+-- Search and replace options
+vim.opt.ignorecase = true -- search case insensitive
+vim.opt.smartcase = true -- search matters if capital letter
+vim.opt.inccommand = "split" -- "for incsearch while sub
+
+-- Filtering behavior
+vim.opt.wildmode = "list:longest,list:full" -- for : stuff
+vim.opt.wildignore:append { ".javac", "node_modules", "*.pyc" }
+vim.opt.wildignore:append {
+  ".o",
+  ".obj",
+  ".dll",
+  ".exe",
+  ".so",
+  ".a",
+  ".lib",
+  ".pyc",
+  ".pyo",
+  ".pyd",
+  ".swp",
+  ".swo",
+  ".class",
+  ".DS_Store",
+  ".git",
+  ".hg",
+  ".orig",
+}
+
+-- Setup change directory keybind
+vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>", { desc = "cd to current buffer" })
