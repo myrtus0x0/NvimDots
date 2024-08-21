@@ -11,7 +11,10 @@ return {
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.yaml" },
-  { import = "astrocommunity.colorscheme.nordic-nvim" },
+  -- { import = "astrocommunity.colorscheme.gruvbox-nvim" },
+  { import = "astrocommunity/note-taking/obsidian-nvim" },
+  { import = "astrocommunity/colorscheme/miasma-nvim" },
   -- import/override with your plugins folder
 }
