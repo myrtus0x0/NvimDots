@@ -13,7 +13,7 @@ return {
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.yaml" },
-  -- { import = "astrocommunity.colorscheme.gruvbox-nvim" },
+  { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity/note-taking/obsidian-nvim" },
   { import = "astrocommunity/colorscheme/miasma-nvim" },
   -- import/override with your plugins folder
