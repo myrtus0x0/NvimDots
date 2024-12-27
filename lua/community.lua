@@ -14,7 +14,15 @@ return {
   { import = "astrocommunity.pack.cpp" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.colorscheme.catppuccin" },
-  { import = "astrocommunity/note-taking/obsidian-nvim" },
+  -- { import = "astrocommunity/note-taking/obsidian-nvim" },
   { import = "astrocommunity/colorscheme/miasma-nvim" },
+  { import = "astrocommunity/note-taking/neorg" },
+  { import = "astrocommunity/search/nvim-spectre" },
+  { import = "astrocommunity/diagnostics/trouble-nvim" },
+  { import = "astrocommunity/motion/hop-nvim" },
+  { import = "astrocommunity/utility/hover-nvim" },
+  { import = "astrocommunity/scrolling/mini-animate" },
+  { import = "astrocommunity/utility/noice-nvim" },
+  -- { import = "astrocommunity/scrolling/neoscroll-nvim" },
   -- import/override with your plugins folder
 }
